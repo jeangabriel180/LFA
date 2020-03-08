@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<script>
+	function Maquina(){
+		var moedas = [];
+		var i  = 1;
+		var somaValor = 0;
+		var valorMoeda = 0;
+		var inserir = true;
+
+		while(inserir){
+			 moedas[i] = prompt("Digite a " + i + "°moeda (apenas 0.10 e 0.25)");
+
+			 if(moedas[i] != "0.10" && moedas[i] != "0.25")
+			 {
+			 	alert("valor da moeda não aceito")
+			 }
+			 else
+			 {
+				valorMoeda = Number(moedas[i]);
+				somaValor += valorMoeda;
+				alert("Valor inserido até agora:" + somaValor.toFixed(2));
+			 }
+
+			 if(!confirm("Deseja inserir outra uma moeda?"))
+			 	break;
+			 i++;
+		}
+		if(somaValor.toFixed(2) < 0.45.toFixed(2))
+			alert("Sem coca pra vc!");
+		else
+			alert("Coca-Cola Saiu!");
+	}
+</script>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Máquina de Venda</title>
+	</head>
+	<body  onload="return Maquina()">
+	</body>
+</html>
